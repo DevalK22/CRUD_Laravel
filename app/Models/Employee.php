@@ -19,6 +19,13 @@ class Employee extends Authenticatable
         'age',
         'gender',
         'salary',
+        'designation',
+        'department',
+        'start_leave',
+        'end_leave',
+        'leave_type',
+        'reason',
+        'status',
     ];
     protected static function boot()
     {

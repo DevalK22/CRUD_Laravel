@@ -18,7 +18,7 @@
                 <div class="h-100 p-5 bg-body-tertiary border rounded-3">
                     <h2 style="text-align:center">Update Employee Details</h2>
                     <p>Please fill out the form below:</p>
-                    <form action="{{url('admin/dashboard/edit/'.$employee->id)}}" method="POST">
+                    <form action="{{ url('admin/dashboard/edit/'.$employee->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
@@ -53,6 +53,25 @@
                                 <span class="d-block fs-6 text-danger mt-2">{{ $message }}</span>
                             @enderror
                         </div>
+
+                        <!-- New Designation Field -->
+                        <div class="mb-3">
+                            <label for="designation" class="form-label">Designation</label>
+                            <input type="text" class="form-control" name="designation" id="designation" value="{{ old('designation', $employee->designation) }}" placeholder="Enter employee designation">
+                            @error('designation')
+                                <span class="d-block fs-6 text-danger mt-2">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <!-- New Department Field -->
+                        <div class="mb-3">
+                            <label for="department" class="form-label">Department</label>
+                            <input type="text" class="form-control" name="department" id="department" value="{{ old('department', $employee->department) }}" placeholder="Enter employee department">
+                            @error('department')
+                                <span class="d-block fs-6 text-danger mt-2">{{ $message }}</span>
+                            @enderror
+                        </div>
+
                         <button type="submit" class="btn btn-primary">Update</button>
                         <a href="{{ route('dashboard') }}" class="btn btn-secondary ms-2">Cancel</a>
                     </form>

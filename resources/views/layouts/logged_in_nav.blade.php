@@ -7,8 +7,8 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item d-flex align-items-center">
-                    <img src="user.png" alt="User Icon" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 8px;">
-                    <span class="nav-link">Welcome, {{ $employee->name }}</span>
+                    <img src="{{ asset('user.png') }}" alt="User Icon" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 8px;">
+                    <span class="nav-link">Welcome, {{Auth::user()->name }}</span>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto">

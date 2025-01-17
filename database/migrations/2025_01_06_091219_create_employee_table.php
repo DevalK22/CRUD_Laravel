@@ -12,13 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->integer('id')->primary(); // Change this line to integer type
+            $table->integer('id')->primary();
             $table->string('email')->unique();
             $table->string('password');
             $table->string('name');
             $table->integer('age');
             $table->string('gender');
+            $table->string('designation')->nullable();
+            $table->string('department')->nullable();
             $table->integer('salary')->nullable();
+            $table->string('leave_type')->nullable();
+            $table->date('start_leave')->nullable();
+            $table->date('end_leave')->nullable();
+            $table->string('reason')->nullable();
+            $table->enum('status',['Approved','Rejected','Pending'])->nullable();
             $table->timestamps();
         });
     }
