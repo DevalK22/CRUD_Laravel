@@ -76,7 +76,7 @@
 <body>
     @include('layouts.logged_in_nav')
     @include('layouts.success_alert')
-    @include('layouts.failure_alert')
+
 
     <main>
         <div class="container" style="max-width: 400px">
@@ -101,11 +101,11 @@
                 @if($employee->status==null)
                     <a href="{{route ('leave.form')}}" class="btn btn-dark ms-3">Request for Leave</a>
                 @elseif($employee->status=="Pending")
-                    <a href="" class="btn btn-dark ms-3">Request for Leave</a><span class="status-pending">Pending</span>
+                    <span class="status-pending">Pending</span>
                 @elseif($employee->status=="Approved")
-                    <a href="" class="btn btn-dark ms-3">Request for Leave</a><span class="status-approved">Approved</span>
+                    <span class="status-approved">Approved</span>
                 @elseif($employee->status=="Rejected")
-                    <a href="" class="btn btn-dark ms-3">Request for Leave</a><span class="status-rejected">Rejected</span>
+                    <span class="status-rejected">Rejected</span>
                 @endif
             </div>
         </div>
